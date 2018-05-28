@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import './Admin.css';
+
 
 const mapReduxStateToProps = (reduxState) => (
     { reduxState }
@@ -14,12 +16,11 @@ class Admin extends Component {
             results: []
         }
     }
-
+    //--Calling GET function
     componentDidMount() {
-        console.log('component did mount');
         this.grabData();
     }
-
+    //--Function to GET data from server
     grabData() {
         axios.get('/api/feedback').then((response) => {
             console.log(response.data[0]);
@@ -31,6 +32,7 @@ class Admin extends Component {
         })
     }
 
+    //--Function for when delete button is clicked (send DELETE request to server)-- 
     deleteFeedback = (event) => {
         console.log('feedback id:', event.target.value);
         let id = event.target.value;
@@ -44,7 +46,7 @@ class Admin extends Component {
 
 
     render() {
-
+        //Variable to display on DOM
         let feedback = this.state.results.map((feedback) => {
             return <tr key={feedback.id}>
                 <td>{feedback.feeling}</td>
@@ -57,9 +59,9 @@ class Admin extends Component {
 
         return (
             <div>
-
+                <h2><u>Results</u></h2>
                 <div>
-                    <table>
+                    <table align="center">
                         <thead>
                             <tr>
                                 <th>Feeling</th>

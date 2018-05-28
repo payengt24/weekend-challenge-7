@@ -3,3 +3,13 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+.card-design{
+  background-color: #EED5D2;
+  margin: auto;
+  width: 40%;
+  border: 3px solid #8B8378;
+  padding: 15px;
+
+}

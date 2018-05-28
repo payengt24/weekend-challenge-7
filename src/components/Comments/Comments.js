@@ -3,17 +3,12 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom'
 
-
-
-
 const mapReduxStateToProps = (reduxState) => ({ reduxState });
-
 
 class Comments extends Component {
 
-
+    //------Function for POST when Submit button is clicked------
     submitFeedback = () => {
-
         console.log('sending data', this.props.reduxState)
         const data = {
             feeling: this.props.reduxState.feeling,
@@ -21,13 +16,11 @@ class Comments extends Component {
             support: this.props.reduxState.supported,
             comments: this.props.reduxState.comment,
         }
-
         axios.post('/api/feedback', data).then((response) => {
             this.props.history.push('/thankYou')
         }).catch((error) => {
             alert('There was a problem with axios PUT')
         })
-
     }
 
     //Update comment feedback to redux store
@@ -36,20 +29,19 @@ class Comments extends Component {
         this.props.dispatch(action);
     }
 
-
     render() {
         console.log('comments', this.props.reduxState);
         return (
             <div>
-                
-                <h2>4 of 4 pages</h2>
 
+                <h2>4 of 4 pages</h2>
 
                 <div>
                     <div className="card-design">
                         <p>Any comments you want to leave?</p>
                         <input type="text" placeholder="Comments" onChange={this.handleFeedbackChange} />
                     </div>
+                    <br />
                     <button onClick={this.submitFeedback}>Submit</button>
                     <div>
                     </div>
@@ -59,7 +51,5 @@ class Comments extends Component {
         );
     }
 }
-
-
 
 export default connect(mapReduxStateToProps)(Comments);

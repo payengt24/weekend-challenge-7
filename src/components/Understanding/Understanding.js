@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import  { Redirect } from 'react-router-dom'
 
-
-
-
 const mapReduxStateToProps = (reduxState) => ({ reduxState });
 
 class Understanding extends Component {
@@ -24,12 +21,12 @@ class Understanding extends Component {
             <div>
                 <h2>2 of 4 pages</h2>
 
-
                 <div>
                     <div className="card-design">
                         <p>How well are you understanding the content?</p>
                         <input type="number" placeholder="Rating" onChange={this.handleFeedbackChange}/>
                     </div>   
+                    <br />
                         <Link to='/supported'>Next</Link>
                     <div>
                     </div>
@@ -39,7 +36,5 @@ class Understanding extends Component {
         );
     }
 }
-
-
 
 export default connect(mapReduxStateToProps)(Understanding);

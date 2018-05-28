@@ -12,8 +12,6 @@ import Understanding from '../Understanding/Understanding';
 import Admin from '../Admin/Admin';
 import ThankYou from '../ThankYou/ThankYou';
 
-
-
 class App extends Component {
   render() {
     return (
