@@ -17,7 +17,7 @@ class ThankYou extends Component {
         console.log('thank you', this.props.reduxState);
         return (
             <div>
-                <h2>Thank you</h2>
+                <h2>Thank you!</h2>
 
 
                 <div>

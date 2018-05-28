@@ -13,3 +13,14 @@ body {
   padding: 15px;
 
 }
+
+button {
+  background-color: #EED5D2; 
+  color: black; 
+  border: 2px solid #EED5D2;
+}
+
+button:hover {
+  background-color: #8B8378;
+  color: white;
+}
